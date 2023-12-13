@@ -1,0 +1,38 @@
+@use "../../style/font";
+
+.form {
+  padding: 20px;
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__input {
+    text-align: left;
+    margin-bottom: 10px;
+    label {
+      padding-bottom: 10px;
+      font-size: font.$font-size-m;
+      text-align: left;
+      display: block;
+    }
+    input {
+      font-size: font.$font-size-s;
+      border-radius: 4px;
+      border: 2px solid rgb(126, 125, 125, 0.5);
+      width: 100%;
+      padding: 6px 12px;
+      font-weight: 400;
+    }
+    input:focus {
+      outline-color: #5297ff;
+    }
+  }
+  &__button {
+    margin: 0 auto;
+    background-color: #0052cc;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+}
