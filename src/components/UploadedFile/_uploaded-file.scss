@@ -1,0 +1,83 @@
+@use "../../style/font";
+// .uploaded-file {
+//   display: flex;
+//   overflow: hidden;
+//   border-radius: 10px;
+//   width: 500px;
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+//   margin-bottom: 20px;
+//   box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+//   cursor: pointer;
+//   &__img {
+//     width: 20%;
+//     object-fit: contain;
+//     display: block;
+//     flex: 2;
+//     border-right: 1px solid rgba(0, 0, 0, 0.1);
+//   }
+//   &__info {
+//     h6 {
+//       padding: 0;
+//       margin: 0;
+//     }
+//     p {
+//       margin: 0;
+//       font-size: font.$font-size-e;
+//     }
+//     padding: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     flex: 4;
+//   }
+// }
+
+.uploaded-file-page {
+  background-color: white;
+  top: 8%;
+  right: 8%;
+  left: 8%;
+  bottom: 8%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  display: block;
+  &.hidden {
+    display: none;
+  }
+}
+.uploaded-file {
+  padding: 6px;
+  float: left;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  &__img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+  &__info {
+    text-align: center;
+    margin-top: 10px;
+    h6 {
+      display: -webkit-box;
+      width: 100px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &:hover {
+    background-color: rgba(109, 108, 112, 0.1);
+  }
+}

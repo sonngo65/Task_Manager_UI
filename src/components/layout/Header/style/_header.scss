@@ -4,4 +4,20 @@
   &__container * {
     color: #9fadbc !important;
   }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-item {
+  display: block;
+  &:hover {
+    & > .nav-link {
+      color: rgb(104, 104, 216) !important;
+    }
+  }
+  &.action {
+    color: rgb(104, 104, 216) !important;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
 }

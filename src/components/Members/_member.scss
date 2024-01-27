@@ -1,0 +1,52 @@
+@use "../../style/font";
+.member {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 15px 20px;
+  margin: 0 20px;
+  align-items: center;
+  .member__avatar {
+    margin-right: 10px;
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  .member__info {
+    padding: 0 10px;
+    h5 {
+      font-weight: 400;
+      font-size: font.$font-size-m;
+      margin: 0;
+    }
+  }
+}
+
+.members {
+  position: relative;
+  .pre-icon {
+    cursor: pointer;
+    top: 1%;
+    left: 2%;
+    position: absolute;
+    &:hover {
+      color: blue;
+    }
+    & > * {
+      font-size: font.$font-size-xl;
+    }
+  }
+  .members__leader {
+  }
+  .membars__member {
+  }
+  .members__title {
+    padding: 15px 20px;
+    margin: 20px;
+    border-bottom: 1px solid black;
+  }
+  .members__list {
+  }
+}

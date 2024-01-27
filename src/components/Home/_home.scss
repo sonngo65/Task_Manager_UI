@@ -1,0 +1,11 @@
+.body {
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: url("../../../public/images/backgound-task.jpg");
+  background-position: center;
+  background-size: cover;
+  .content {
+    &__task {
+    }
+  }
+}

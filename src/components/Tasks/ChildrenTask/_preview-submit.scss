@@ -1,0 +1,44 @@
+@use "../../../style/font";
+.preview-input {
+  width: 100%;
+  padding: 10px 0;
+  .preview-input-item {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    .input-img {
+      width: 20%;
+      object-fit: contain;
+      display: block;
+      flex: 2;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .input-info {
+      h6 {
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-size: font.$font-size-e;
+      }
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 4;
+    }
+    .input-close {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      & > * {
+        font-size: font.$font-size-x;
+      }
+    }
+  }
+}

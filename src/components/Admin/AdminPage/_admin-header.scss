@@ -1,0 +1,94 @@
+@use "../../../style/font";
+.admin__header {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  font-family: "Allura", cursive;
+  font-family: "Raleway", sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 70px;
+  background-image: linear-gradient(
+    to right,
+    rgba(23, 85, 23, 0.8),
+    rgba(36, 83, 240, 0.7)
+  );
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  color: white;
+  &__logo {
+    h5 {
+      display: inline-block;
+    }
+    span {
+      margin-left: 30px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  &__navbar {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    li {
+      margin-right: 25px;
+      & > * {
+        font-size: font.$font-size-x;
+      }
+      &:last-child {
+        & > * {
+          font-size: font.$font-size-xl;
+        }
+      }
+      position: relative;
+      .account-control {
+        top: 100%;
+        right: 0%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+        &::after {
+          position: absolute;
+          top: 3px;
+          right: 5px;
+          content: " ";
+          width: 0px;
+          height: 0px;
+          transform: translateY(-50%) rotateZ(45deg);
+          background-color: white;
+          transition: all 0.3s ease-in-out;
+        }
+        li {
+          height: 0px;
+          line-height: 0px;
+          padding: 0 10px;
+          transition: all 0.2s ease-in-out;
+
+          & > * {
+            display: none;
+            font-size: font.$font-size-x;
+          }
+        }
+        &.show {
+          &::after {
+            height: 20px;
+            width: 20px;
+          }
+          li {
+            height: 40px;
+            line-height: 40px;
+            & > * {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

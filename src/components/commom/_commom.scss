@@ -1,6 +1,15 @@
 @use "../../style/font";
-
+.form-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../public/images/login-background.png");
+  background-size: contain;
+}
 .form {
+  width: 100%;
   padding: 20px;
   &__title {
     margin-bottom: 20px;
@@ -34,5 +43,37 @@
     color: white;
     border: none;
     border-radius: 5px;
+  }
+}
+.message--success {
+  color: green;
+}
+.message--error {
+  color: red;
+}
+
+.go-back {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate3d(50%, -50%, 0);
+    color: white;
+    transition: all 0.3s;
+    font-size: 40px;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    .go-back__icon {
+      color: #0052cc;
+    }
   }
 }

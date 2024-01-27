@@ -1,0 +1,14 @@
+.child-task-statistic-item {
+  height: 25px;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  &__content {
+    display: inline-block;
+  }
+  &__status {
+  }
+}

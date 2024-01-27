@@ -1,0 +1,34 @@
+@use "../../style/font";
+.workplace-list {
+  list-style-type: none;
+}
+.workplace-item {
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 5px;
+  float: left;
+}
+.workplace-link {
+  display: block;
+
+  width: 300px;
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &__head {
+    width: 100%;
+    height: 50px;
+    background-image: url("../../../public/images/img_code.jpg");
+    background-size: cover;
+  }
+  text-decoration: none;
+  color: black;
+  &__name {
+    text-align: left;
+    color: white;
+    font-size: font.$font-size-x;
+    line-height: 50px;
+    padding-left: 10px;
+    font-weight: 500;
+  }
+}

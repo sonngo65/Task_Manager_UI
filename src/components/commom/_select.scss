@@ -1,0 +1,42 @@
+.select-input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &__title {
+    display: block;
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+    padding: 2px 20px;
+  }
+  &__list {
+  }
+  &__view {
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    &.active {
+      display: block;
+    }
+    li {
+      text-align: center;
+      &.selected {
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      list-style-type: none;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+    }
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  &__value {
+    display: none;
+  }
+}

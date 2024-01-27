@@ -1,0 +1,26 @@
+.task-statistic {
+  height: 100%;
+
+  display: flex;
+  .task-statistic-list {
+    width: 60%;
+    padding: 15px;
+    margin: 0;
+    list-style-type: none;
+    height: 70vh;
+    overflow-y: auto;
+  }
+  .preview-task-child {
+    &.hidden {
+      display: none;
+    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+}

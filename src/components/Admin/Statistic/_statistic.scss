@@ -1,0 +1,85 @@
+.statistic {
+  height: 100%;
+  padding: 15px;
+  position: relative;
+  &__head {
+  }
+  &__list {
+    display: flex;
+    list-style-type: none;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    .workspace-list {
+      position: absolute;
+      background-color: white;
+      width: 200px;
+
+      left: 4%;
+      top: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      list-style-type: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+      z-index: 2;
+      li {
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      &.hidden {
+        height: 0 !important;
+
+        li {
+          height: 0;
+          opacity: 0;
+        }
+      }
+    }
+    &:hover {
+      top: -1px;
+      box-shadow: 0 10px 10px 4px rgba(0, 0, 0, 0.1);
+    }
+    &__title {
+      position: relative;
+      padding-bottom: 10px;
+    }
+    &__info {
+      position: relative;
+    }
+    .task-info {
+      & > * {
+        margin-right: 10px;
+      }
+      &-completed {
+        color: green;
+      }
+      &-overtime {
+        color: red;
+      }
+      &-unfinished {
+        color: blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use "../../../style/font";
+.progress-task {
+  position: relative;
+  width: 22%;
+  float: left;
+  padding: 15px;
+  background-color: white;
+  margin: 10px 20px;
+  position: relative;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  &.completed {
+    .progress-task {
+      &__status {
+        color: green;
+      }
+    }
+  }
+  &__status {
+    right: 5%;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.3);
+  }
+  &__name {
+    display: block;
+    margin-top: 25px;
+    color: black;
+    font-size: font.$font-size-x;
+    font-weight: 500;
+  }
+}

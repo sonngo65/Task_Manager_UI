@@ -1,0 +1,14 @@
+@use "../../../style/font";
+.back-icon {
+  padding: 20px;
+  text-align: left;
+
+  & > * {
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: font.$font-size-x;
+    &:hover {
+      color: blue;
+    }
+  }
+}

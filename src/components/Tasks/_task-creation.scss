@@ -1,0 +1,58 @@
+.fullscreen-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  &.show {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    .task-creation {
+      visibility: visible;
+      opacity: 1;
+      display: inline-block;
+      width: 400px;
+    }
+  }
+}
+.task-creation {
+  padding: 10px;
+  visibility: hidden;
+  width: 200px;
+  opacity: 0;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 99;
+  transition: all 0.2s ease-in;
+  .select-input-group {
+    text-align: left;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    &__input {
+      top: 5%;
+      left: 50%;
+      position: absolute;
+    }
+  }
+}
+
+.task-creation__head {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  margin: 10px;
+  padding-bottom: 10px;
+  & > * {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}

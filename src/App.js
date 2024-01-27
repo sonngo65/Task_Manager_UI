@@ -1,14 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/layout/Header";
 import "./style/custom.scss";
-import LoginForm from "./components/LoginForm";
+import "./style/index.scss";
+import PageRouter from "./components/PageRouter";
+import store from "./store";
+import { Provider } from "react-redux";
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <LoginForm />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <PageRouter />
+      </div>
+    </Provider>
   );
 }
 

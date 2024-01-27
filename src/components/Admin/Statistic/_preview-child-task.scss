@@ -1,0 +1,24 @@
+@use "../../../style/font";
+.preview-child-task {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    .head-left {
+      font-size: font.$font-size-x;
+      font-weight: 600;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+    }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  &__body {
+    padding: 20px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  &__member-upload {
+    padding: 10px;
+  }
+}

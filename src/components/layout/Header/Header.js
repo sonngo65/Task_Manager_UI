@@ -1,9 +1,20 @@
 import "./style/_header.scss";
-import Button from "react-bootstrap/Button";
-
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../store/actions/UserAction";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export default function Headers() {
+export default function Headers({ setJoinWorkspaceForm }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const workspaces = useSelector((state) => state.workspace.workspaces);
+  const workspaceId = useSelector(
+    (state) => state.workspace.currentWorkspace.id
+  );
+  const user = useSelector((state) => state.user.user);
   return (
     <div className="header">
       <Navbar expand="lg">
@@ -12,22 +23,47 @@ export default function Headers() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#link">Login</Nav.Link>
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown> */}
+              {!sessionStorage.getItem("token") ? (
+                <>
+                  <Nav.Link href="/login">login</Nav.Link>
+                </>
+              ) : (
+                <Nav.Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(logout());
+                    navigate("/login");
+                  }}
+                >
+                  logout
+                </Nav.Link>
+              )}
+              <NavDropdown title="Không gian làm việc" id="basic-nav-dropdown">
+                {workspaces &&
+                  workspaces.map((workspace) => (
+                    <div
+                      class={`nav-item ${
+                        workspaceId === workspace.id && "active"
+                      }`}
+                    >
+                      <Link class="nav-link" to={`/?w=${workspace.id}`}>
+                        {workspace.name}
+                      </Link>
+                    </div>
+                  ))}
+              </NavDropdown>
+              <Nav.Link
+                onClick={(e) => {
+                  setJoinWorkspaceForm((state) => {
+                    return { ...state, isShow: !state.isShow };
+                  });
+                }}
+              >
+                Tham gia không gian làm việc
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Text>{user.firstName + " " + user.lastName}</Navbar.Text>
         </Container>
       </Navbar>
     </div>

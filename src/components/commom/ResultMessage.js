@@ -1,4 +1,4 @@
 var ResultMessage = ({ type, message }) => {
-  return <p className={type}>{message}</p>;
+  return <p className={"message--" + type}>{message}</p>;
 };
 export default ResultMessage;

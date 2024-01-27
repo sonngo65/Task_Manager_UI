@@ -1,0 +1,40 @@
+@use "../../../style/font";
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Raleway:wght@200;300;400;500;600;700&display=swap");
+
+.admin {
+  &__body {
+    font-family: "Allura", cursive;
+    font-family: "Raleway", sans-serif;
+    padding-top: 70px;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    &__side-bar {
+      flex: 1;
+      background-color: white;
+      box-shadow: 10px 0px 15px 10px rgba(0, 0, 0, 0.1);
+      li {
+        padding: 7px;
+      }
+    }
+    &__content {
+      padding: 0 15px;
+      flex: 5;
+      .table-input-lable {
+        display: block;
+        height: 20px;
+        min-width: 20px;
+      }
+      .table-input {
+        color: black;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        display: inline-block;
+        &.disabled {
+          display: none;
+        }
+      }
+    }
+  }
+}

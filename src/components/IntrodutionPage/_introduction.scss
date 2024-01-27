@@ -1,0 +1,73 @@
+.introduction-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.intro {
+  background-image: url("../../../public/images/intro-background.jpg");
+
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  color: white;
+  &__content {
+    text-align: left;
+    position: relative;
+    padding-top: 150px;
+    margin-left: 100px;
+    button {
+      padding: 7px 30px;
+      font-size: 20px;
+      text-transform: capitalize;
+      border: none;
+      border-radius: 5px;
+      background-image: linear-gradient(
+        45deg,
+        rgba(10, 10, 10, 0.5),
+        rgba(6, 25, 196, 0.6)
+      );
+      color: white;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.3;
+      }
+
+      & > * {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  &__desc {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .intro__title {
+    font-size: 30px;
+  }
+  .intro__desc {
+    font-size: 15px;
+  }
+}
